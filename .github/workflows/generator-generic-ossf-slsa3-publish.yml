@@ -5,6 +5,9 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +22,6 @@ jobs:
       - name: Build artifacts
         run: |
           set -euo pipefail
-
           echo "artifact1" > artifact1
           echo "artifact2" > artifact2
 
@@ -35,9 +37,6 @@ jobs:
             echo "Error: no artifacts found."
             exit 1
           fi
-
-          echo "Generated artifacts:"
-          printf '%s\n' "$files"
 
           echo "digests=$(sha256sum $files | base64 -w0)" >> "$GITHUB_OUTPUT"
 
