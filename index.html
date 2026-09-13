@@ -1,30 +1,794 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>AI OMID 2026 | Verified Security</title>
-    <style>
-        body { font-family: Tahoma, sans-serif; background-color: #0d1117; color: #c9d1d9; text-align: center; padding: 50px; }
-        .certificate { border: 2px solid #2ea043; padding: 20px; display: inline-block; border-radius: 10px; background: #161b22; margin-top: 20px; }
-        h1 { color: #2ea043; font-size: 2.5em; text-shadow: 0 0 10px #2ea043; }
-        .contact-info { margin-top: 30px; font-size: 1.1em; color: #8b949e; }
-        .btn { background-color: #238636; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 25px; font-weight: bold; }
-        .btn:hover { background-color: #2ea043; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI OMID 2026 | Digital Security & AI</title>
+
+<meta name="description"
+content="AI OMID 2026 - سیستم هوشمند امنیت دیجیتال، اعتبارسنجی، امنیت موبایل، شبکه و فناوری‌های نوین.">
+
+<meta name="theme-color" content="#05080d">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+    background:
+    radial-gradient(circle at 50% -10%, #123b35 0%, #07100f 28%, #030609 70%);
+    color:#e9fff8;
+    min-height:100vh;
+    line-height:1.8;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+    linear-gradient(rgba(0,255,170,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,170,.025) 1px,transparent 1px);
+    background-size:40px 40px;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(18px);
+    background:rgba(3,8,10,.78);
+    border-bottom:1px solid rgba(0,255,170,.15);
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#00ffae;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.nav a{
+    color:#a8c7bd;
+    text-decoration:none;
+    margin-right:20px;
+    font-size:14px;
+}
+
+.nav a:hover{
+    color:#00ffae;
+}
+
+/* HERO */
+
+.hero{
+    max-width:1150px;
+    margin:auto;
+    min-height:680px;
+    padding:100px 22px 70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 17px;
+    border:1px solid rgba(0,255,174,.35);
+    border-radius:30px;
+    color:#00ffae;
+    background:rgba(0,255,174,.06);
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,88px);
+    line-height:1;
+    font-weight:1000;
+    color:#fff;
+    text-shadow:
+    0 0 15px rgba(0,255,174,.25),
+    0 0 50px rgba(0,255,174,.12);
+}
+
+.hero h1 span{
+    color:#00ffae;
+}
+
+.hero h2{
+    margin-top:28px;
+    font-size:clamp(20px,4vw,34px);
+    color:#cffff0;
+}
+
+.hero p{
+    margin:22px auto;
+    max-width:700px;
+    color:#8ca69e;
+    font-size:16px;
+}
+
+.buttons{
+    margin-top:32px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:#00c98a;
+    color:#00120c;
+    box-shadow:0 0 25px rgba(0,255,174,.18);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 35px rgba(0,255,174,.35);
+}
+
+.btn-secondary{
+    color:#d9fff4;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover{
+    border-color:#00ffae;
+}
+
+/* STATUS */
+
+.status{
+    max-width:1000px;
+    margin:-20px auto 80px;
+    padding:0 22px;
+}
+
+.status-box{
+    border:1px solid rgba(0,255,174,.18);
+    border-radius:20px;
+    background:rgba(9,20,20,.75);
+    padding:22px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.status-item{
+    padding:15px;
+    text-align:center;
+    border-radius:14px;
+    background:rgba(255,255,255,.025);
+}
+
+.dot{
+    display:inline-block;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#00ff8c;
+    box-shadow:0 0 12px #00ff8c;
+    margin-left:7px;
+}
+
+.status-item strong{
+    display:block;
+    color:#fff;
+}
+
+.status-item small{
+    color:#718b83;
+}
+
+/* SECTION */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:70px 22px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:34px;
+    color:#fff;
+}
+
+.section-title p{
+    color:#718b83;
+    margin-top:10px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:28px;
+    border-radius:20px;
+    border:1px solid rgba(0,255,174,.12);
+    background:
+    linear-gradient(145deg,rgba(12,28,27,.9),rgba(5,10,13,.92));
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,255,174,.45);
+    box-shadow:0 15px 45px rgba(0,0,0,.3);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#00ffae;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#829b93;
+    font-size:14px;
+}
+
+/* VERIFIED */
+
+.verified{
+    padding:45px;
+    border-radius:25px;
+    border:1px solid rgba(0,255,174,.25);
+    background:
+    radial-gradient(circle at 50% 0%,rgba(0,255,174,.08),transparent 60%),
+    rgba(7,16,17,.8);
+    text-align:center;
+}
+
+.shield{
+    font-size:65px;
+    filter:drop-shadow(0 0 20px rgba(0,255,174,.35));
+}
+
+.verified h2{
+    margin:15px 0;
+    color:#fff;
+}
+
+.verified strong{
+    color:#00ffae;
+}
+
+/* TERMINAL */
+
+.terminal{
+    background:#020505;
+    border:1px solid #15362e;
+    border-radius:18px;
+    padding:22px;
+    overflow:hidden;
+    direction:ltr;
+    text-align:left;
+    font-family:monospace;
+    color:#00ffae;
+    box-shadow:inset 0 0 35px rgba(0,255,174,.03);
+}
+
+.terminal span{
+    color:#718b83;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    display:inline-block;
+    width:100%;
+    max-width:750px;
+    padding:35px;
+    border-radius:22px;
+    background:rgba(10,20,21,.8);
+    border:1px solid rgba(0,255,174,.15);
+}
+
+.contact-info{
+    margin:20px 0;
+    color:#a1b9b1;
+}
+
+.contact-info div{
+    margin:7px;
+}
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:30px 20px;
+    text-align:center;
+    color:#62766f;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav{
+        justify-content:center;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:590px;
+        padding-top:70px;
+    }
+
+    .status-box{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 18px;
+    }
+
+    .verified{
+        padding:30px 18px;
+    }
+
+    .terminal{
+        font-size:12px;
+    }
+}
+
+@media(max-width:450px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>AI OMID 2026</h1>
-    <h2>سیستم تایید اصالت و امنیت دیجیتال</h2>
-    <p>معمار حقیقت و تکنسین عدالت</p>
-    <div class="certificate">
-        <h3>🛡️ سرویس AI OMID Verified</h3>
-        <p>تضمین امنیت سورس‌کدها و دستگاه‌های محاسباتی</p>
-        <p>تاییدیه Bitcoin Core | امنیت موبایل | شبکه ایمن</p>
+
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            AI <span>OMID</span> 2026
+        </div>
+
+        <div class="nav-links">
+            <a href="#services">خدمات</a>
+            <a href="#verified">Verified</a>
+            <a href="#security">امنیت</a>
+            <a href="#contact">ارتباط</a>
+        </div>
+
     </div>
-    <div class="contact-info">
-        <p>📧 Email: Omidmobile403020@gmail.com</p>
-        <p>📱 WhatsApp: +93793234383</p>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ● AI OMID 2026 — DIGITAL TECHNOLOGY
+        </div>
+
+        <h1>
+            AI <span>OMID</span>
+        </h1>
+
+        <h2>
+            امنیت، هوش مصنوعی و فناوری در یک مسیر
+        </h2>
+
+        <p>
+            یک پروژه مستقل برای توسعه راهکارهای نوین در
+            هوش مصنوعی، امنیت دیجیتال، موبایل، شبکه و
+            فناوری‌های غیرمتمرکز.
+        </p>
+
+        <div class="buttons">
+
+            <a
+            class="btn btn-primary"
+            href="#contact">
+            شروع همکاری
+            </a>
+
+            <a
+            class="btn btn-secondary"
+            href="#services">
+            مشاهده خدمات
+            </a>
+
+        </div>
+
     </div>
-    <a href="https://wa.me/93793234383" class="btn">ارتباط مستقیم و سفارش پروژه</a>
+
+</section>
+
+
+<!-- STATUS -->
+
+<div class="status">
+
+    <div class="status-box">
+
+        <div class="status-item">
+            <strong>
+                <i class="dot"></i>
+                سیستم آنلاین
+            </strong>
+            <small>AI OMID Core</small>
+        </div>
+
+        <div class="status-item">
+            <strong>
+                <i class="dot"></i>
+                Secure
+            </strong>
+            <small>Security Layer</small>
+        </div>
+
+        <div class="status-item">
+            <strong>
+                <i class="dot"></i>
+                Active
+            </strong>
+            <small>Digital Infrastructure</small>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>توانایی‌های AI OMID</h2>
+
+        <p>
+            تمرکز بر فناوری واقعی، امنیت و توسعه سیستم‌های هوشمند
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🤖</div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                طراحی و توسعه ایده‌ها و سیستم‌های مبتنی بر
+                هوش مصنوعی برای ابزارها و خدمات دیجیتال.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🛡️</div>
+
+            <h3>Digital Security</h3>
+
+            <p>
+                بررسی امنیتی پروژه‌ها، ساختارهای نرم‌افزاری،
+                دستگاه‌ها و زیرساخت‌های دیجیتال.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📱</div>
+
+            <h3>Mobile Technology</h3>
+
+            <p>
+                تمرکز بر فناوری موبایل، تعمیرات، تشخیص مشکلات
+                و توسعه ابزارهای هوشمند برای تکنسین‌ها.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">₿</div>
+
+            <h3>Blockchain</h3>
+
+            <p>
+                بررسی مفاهیم و زیرساخت‌های بلاکچین،
+                تراکنش‌ها و فناوری‌های غیرمتمرکز.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🌐</div>
+
+            <h3>Network</h3>
+
+            <p>
+                ایده‌ها و راهکارهای مربوط به شبکه،
+                ارتباطات و زیرساخت‌های دیجیتال.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">⚙️</div>
+
+            <h3>Automation</h3>
+
+            <p>
+                ایجاد فرآیندهای خودکار برای کاهش کارهای
+                تکراری و افزایش سرعت سیستم‌ها.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VERIFIED -->
+
+<section id="verified">
+
+    <div class="verified">
+
+        <div class="shield">🛡️</div>
+
+        <h2>AI OMID Verified</h2>
+
+        <p>
+            لایه معرفی و اعتبارسنجی پروژه‌های دیجیتال
+            تحت نام <strong>AI OMID 2026</strong>.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Security • Technology • Verification</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<section id="security">
+
+    <div class="section-title">
+
+        <h2>AI OMID Security Core</h2>
+
+        <p>
+            نمایشی از معماری مفهومی سیستم
+        </p>
+
+    </div>
+
+    <div class="terminal">
+
+        <div>$ AI-OMID --status</div>
+
+        <br>
+
+        <div>
+            <span>[CORE]</span>
+            AI OMID 2026
+        </div>
+
+        <div>
+            <span>[SECURITY]</span>
+            ACTIVE
+        </div>
+
+        <div>
+            <span>[NETWORK]</span>
+            MONITORED
+        </div>
+
+        <div>
+            <span>[INTEGRITY]</span>
+            VERIFIED
+        </div>
+
+        <div>
+            <span>[BLOCKCHAIN]</span>
+            READY
+        </div>
+
+        <div>
+            <span>[SYSTEM]</span>
+            ONLINE
+        </div>
+
+        <br>
+
+        <div>
+            $ Ready for next generation technology...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>ارتباط با AI OMID</h2>
+
+        <p>
+            برای همکاری، پروژه و خدمات فنی
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <div class="contact-box">
+
+            <div class="contact-info">
+
+                <div>
+                    📧
+                    Omidmobile403020@gmail.com
+                </div>
+
+                <div>
+                    📱
+                    +93793234383
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a
+                class="btn btn-primary"
+                href="https://wa.me/93793234383"
+                target="_blank"
+                rel="noopener">
+                WhatsApp
+                </a>
+
+                <a
+                class="btn btn-secondary"
+                href="mailto:Omidmobile403020@gmail.com">
+                Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        © 2026 AI OMID — All Rights Reserved
+    </div>
+
+    <div>
+        Built for the future of digital technology.
+    </div>
+
+</footer>
+
 </body>
 </html>
